@@ -5,7 +5,6 @@ import { Hoge } from './pages/Hoge'
 
 // props渡してみた
 const name = "mofmof"
-const now = new Date().toString()
 
 export const Routes = () => {
   return (
@@ -14,7 +13,7 @@ export const Routes = () => {
         <Hello name={name} />
       </Route>
       <Route path="/spa/hoge">
-        <Hoge time={now} />
+        <Hoge />
       </Route>
     </Switch >
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const Hello = () => {
+export const Hello = (props) => {
   return (
-    <div>こんにちは。</div>
+    <div>こんにちは。{props.name}さん</div>
   )
 }
