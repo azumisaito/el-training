@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   end
   resources :labels, only: %i[index create destroy]
 
+  # https://qiita.com/ryosuketter/items/9240d8c2561b5989f049
+  scope 'spa' do
+    get '*path', to: 'spa_roots#show'
+  end
+
   get '*path', to: 'application#routing_error'
 end
