@@ -56,6 +56,7 @@ group :development do
   gem 'rubocop-rspec', require: false
   gem 'guard'
   gem 'guard-rspec'
+  gem 'foreman'
 end
 
 group :test do
