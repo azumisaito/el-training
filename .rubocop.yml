@@ -92,3 +92,9 @@ Style/MixinUsage:
 Layout/HashAlignment:
   Exclude:
     - 'lib/tasks/auto_annotate_models.rake'
+
+######## Naming ########
+Naming/VariableNumber:
+  Exclude:
+    # 元からあるrender_404 的なメソッドに反応してしまう
+    - 'app/controllers/application_controller.rb'
