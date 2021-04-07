@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Hello } from './pages/Hello'
-import { Hoge } from './pages/Hoge'
+import { Hello } from '~/pages/Hello'
+import { Hoge } from '~/pages/Hoge'
 
 // props渡してみた
 const name = "mofmof"
