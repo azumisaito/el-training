@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  slack: circleci/slack@3.4.2
 workflows:
   test_and_lint:
     jobs:
@@ -81,6 +79,3 @@ jobs:
           name: Run Lint
           when: always
           command: bundle exec rubocop
-
-      - slack/status:
-          fail_only: true
