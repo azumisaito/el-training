@@ -54,3 +54,13 @@ tasks --o{ task_labels
 labels --o{ task_labels
 
 ```
+
+## webpacker起動
+起動ファイルはProcfile.dev (herokuのProcと被るため名前変更しています)
+foremanでrails s/webpacker-dev-server起動してます
+```
+$ bundle exec foreman
+```
+
+## docker
+つかってません
