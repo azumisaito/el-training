@@ -1,7 +1,11 @@
 import React from 'react'
+import { PageTitle } from '~/components/PageTitle'
 
 export const Labels = (props) => {
   return (
-    <div>こんにちは。{props.name}さん</div>
+    <div>
+      <PageTitle />
+      こんにちは。{props.name}さん
+    </div>
   )
 }
