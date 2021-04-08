@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const PageTitle = () => {
+export const PageTitle = (props) => {
+  const title = (props.text) ? props.text : 'Page Title'
+
   return (
     <div>
-      <h1>タスク一覧</h1>
+      <h1>{title}</h1>
     </div>
   )
 }

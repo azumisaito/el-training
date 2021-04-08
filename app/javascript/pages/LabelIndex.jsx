@@ -5,9 +5,10 @@ import { TextField } from '~/components/TextField'
 
 import axios from 'axios'
 
-export const Labels = (props) => {
+export const LabelIndex = (props) => {
   const [labels, setLabels] = useState([]),
-        buttonLabel = "ラベルを作成"
+        buttonText = 'ラベルを作成',
+        titleText = 'ラベル一覧'
 
   React.useEffect(async () => {
     const response = await axios.get('/api/labels');
@@ -16,17 +17,18 @@ export const Labels = (props) => {
 
   return (
     <div>
-      <PageTitle />
+      <PageTitle text={titleText} />
       <TextField />
-      <Button label={buttonLabel} />
-      <p>こんにちは。{props.name}さん</p>
+      <Button text={buttonText} />
+      <h3>ラベル</h3>
       <ul>
-      {labels.map(label => (
-        <li key={label.id}>
-          {label.name}
-        </li>
-      ))}
-    </ul>
+        {labels.map(label => (
+          <li key={label.id}>
+            {label.name}
+            <a href="#">削除</a>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

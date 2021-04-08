@@ -1,16 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Labels } from '~/pages/Labels'
+import { LabelIndex } from '~/pages/LabelIndex'
 import { Hoge } from '~/pages/Hoge'
-
-// props渡してみた
-const name = "mofmof"
 
 export const Routes = () => {
   return (
     <Switch>
       <Route path="/spa/labels">
-        <Labels name={name} />
+        <LabelIndex />
       </Route>
       <Route path="/spa/hoge">
         <Hoge />

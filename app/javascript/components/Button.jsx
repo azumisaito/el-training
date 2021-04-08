@@ -1,10 +1,10 @@
 import React from 'react'
 
 export const Button = (props) => {
-  const label = (props.label) ? props.label : 'submit'
+  const text = (props.text) ? props.text : 'submit'
   return (
     <div>
-      <button>{label}</ button>
+      <button>{text}</ button>
     </div>
   )
 }
