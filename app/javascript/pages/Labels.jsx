@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Hello = (props) => {
+export const Labels = (props) => {
   return (
     <div>こんにちは。{props.name}さん</div>
   )
