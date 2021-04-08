@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # https://qiita.com/ryosuketter/items/9240d8c2561b5989f049
   namespace 'spa' do
     root to: 'spa_roots#show'
+    resources :labels, only: %i[index]
     get '*path', to: 'spa_roots#show'
   end
 
