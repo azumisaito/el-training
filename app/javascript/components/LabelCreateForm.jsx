@@ -6,14 +6,22 @@ export const LabelCreateForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/api/labels", {
-      label: {
-        name: data,
-      }
-    })
-    .then( response => {
-      console.log("responseの内容", response.data)
-    })
+    if(data){
+      axios.post("/api/labels", {
+        label: {
+          name: data,
+        }
+      })
+      .then( response => {
+        console.log(response.data.name) // これを親要素に渡したい
+        setData('')
+      })
+      .catch( error => {
+        console.log(error)
+      })
+    } else {
+      alert('ラベル名を入力してください');
+    }
   }
 
   return (
