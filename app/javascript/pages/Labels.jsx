@@ -6,7 +6,7 @@ import { TextField } from '~/components/TextField'
 
 import axios from 'axios'
 
-export const LabelsIndex = (props) => {
+export const Labels = (props) => {
   const [labels, setLabels] = useState([]),
         buttonText = 'ラベルを作成',
         pageTitle = 'ラベル一覧',

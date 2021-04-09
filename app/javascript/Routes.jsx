@@ -1,13 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { LabelsIndex } from '~/pages/LabelsIndex'
+import { Labels } from '~/pages/Labels'
 import { Hoge } from '~/pages/Hoge'
 
 export const Routes = () => {
   return (
     <Switch>
       <Route path="/spa/labels">
-        <LabelsIndex />
+        <Labels />
       </Route>
       <Route path="/spa/hoge">
         <Hoge />
