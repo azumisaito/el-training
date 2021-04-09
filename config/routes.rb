@@ -19,5 +19,9 @@ Rails.application.routes.draw do
     get '*path', to: 'spa_roots#show'
   end
 
+  namespace :api do
+    resources :labels, only: %i[index]
+  end
+
   get '*path', to: 'application#routing_error'
 end
