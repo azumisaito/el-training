@@ -1,4 +1,6 @@
 class Api::LabelsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: %i[create]
+
   def index
     @labels = current_user.labels
     render json: @labels
