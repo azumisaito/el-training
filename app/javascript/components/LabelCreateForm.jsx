@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-export const LabelCreateForm = () => {
+export const LabelCreateForm = (props) => {
   const [value, setValue] = useState('')
 
   const handleSubmit = (e) => {
@@ -13,7 +13,7 @@ export const LabelCreateForm = () => {
         }
       })
       .then( response => {
-        console.log(response.data.name) // これを親要素に渡したい
+        props.setLabelName(response.data.name)
         setValue('')
       })
       .catch( error => {
