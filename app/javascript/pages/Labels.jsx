@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import { LabelCreateForm } from '~/components/LabelCreateForm'
-import { PageTitle } from '~/components/PageTitle'
-import { SectionTitle } from '~/components/SectionTitle'
 
 import axios from 'axios'
 
 export const Labels = (props) => {
-  const [labels, setLabels] = useState([]),
-        pageTitle = 'ラベル一覧',
-        sectionTitle = 'ラベル'
+  const [labels, setLabels] = useState([])
 
   React.useEffect(async () => {
     const response = await axios.get('/api/labels');
@@ -17,9 +13,9 @@ export const Labels = (props) => {
 
   return (
     <div>
-      <PageTitle text={pageTitle} />
+      <h1>ラベル一覧</h1>
       <LabelCreateForm />
-      <SectionTitle text={sectionTitle} />
+      <h3>ラベル</h3>
       <ul>
         {labels.map(label => (
           <li key={label.id}>
