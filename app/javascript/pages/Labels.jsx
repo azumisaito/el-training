@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { Button } from '~/components/Button'
+import { LabelCreateForm } from '~/components/LabelCreateForm'
 import { PageTitle } from '~/components/PageTitle'
 import { SectionTitle } from '~/components/SectionTitle'
-import { TextField } from '~/components/TextField'
 
 import axios from 'axios'
 
 export const Labels = (props) => {
   const [labels, setLabels] = useState([]),
-        buttonText = 'ラベルを作成',
         pageTitle = 'ラベル一覧',
         sectionTitle = 'ラベル'
 
@@ -20,8 +18,7 @@ export const Labels = (props) => {
   return (
     <div>
       <PageTitle text={pageTitle} />
-      <TextField />
-      <Button text={buttonText} />
+      <LabelCreateForm />
       <SectionTitle text={sectionTitle} />
       <ul>
         {labels.map(label => (
