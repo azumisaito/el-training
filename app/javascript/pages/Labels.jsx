@@ -4,8 +4,7 @@ import { LabelCreateForm } from '~/components/LabelCreateForm'
 import axios from 'axios'
 
 export const Labels = (props) => {
-  const [labels, setLabels] = useState([]),
-        [labelName, setLabelName] = useState('')
+  const [labels, setLabels] = useState([])
 
   React.useEffect(async () => {
     const response = await axios.get('/api/labels');
@@ -15,7 +14,7 @@ export const Labels = (props) => {
   return (
     <div>
       <h1>ラベル一覧</h1>
-      <LabelCreateForm setLabelName={setLabelName} />
+      <LabelCreateForm labels={labels} setLabels={setLabels} />
       <h3>ラベル</h3>
       <ul>
         {labels.map(label => (
@@ -24,7 +23,6 @@ export const Labels = (props) => {
             <a href="#">削除</a>
           </li>
         ))}
-        <li>追加のラベル：{labelName}</li>
       </ul>
     </div>
   )

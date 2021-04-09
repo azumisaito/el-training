@@ -13,7 +13,8 @@ export const LabelCreateForm = (props) => {
         }
       })
       .then( response => {
-        props.setLabelName(response.data.name)
+        const newLabels = [...props.labels, response.data]
+        props.setLabels(newLabels)
         setValue('')
       })
       .catch( error => {
