@@ -2,19 +2,19 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 export const LabelCreateForm = () => {
-  const [data, setData] = useState('')
+  const [value, setValue] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(data){
+    if(value){
       axios.post("/api/labels", {
         label: {
-          name: data,
+          name: value,
         }
       })
       .then( response => {
         console.log(response.data.name) // これを親要素に渡したい
-        setData('')
+        setValue('')
       })
       .catch( error => {
         console.log(error)
@@ -30,8 +30,8 @@ export const LabelCreateForm = () => {
         <label>ラベル名
           <input
             type="text"
-            value={data}
-            onChange={event => setData(event.target.value)}
+            value={value}
+            onChange={event => setValue(event.target.value)}
           />
           <input type="submit" value="ラベルを作成" />
         </label>
