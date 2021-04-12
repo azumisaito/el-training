@@ -15,9 +15,7 @@ class Api::LabelsController < ApplicationController
     end
   end
 
-  def destroy
-    label = label.find(params[:id])
-  end
+  def destroy; end
 
   private
 
