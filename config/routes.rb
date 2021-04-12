@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :tasks, only: %i[index]
+    resources :tasks, only: %i[index show]
     resources :labels, only: %i[index]
   end
 
