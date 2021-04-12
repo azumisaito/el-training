@@ -11,6 +11,16 @@ export const Labels = (props) => {
     setLabels(response.data)
   }, [])
 
+  const removeLabel = (labelId) => {
+    if (window.confirm("ラベルを削除します。よろしいですか?")) {
+      axios.delete("/labels/" + labelId, {
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+      })
+    }
+  }
   return (
     <div>
       <h1>ラベル一覧</h1>
@@ -20,7 +30,7 @@ export const Labels = (props) => {
         {labels.map(label => (
           <li key={label.id}>
             {label.name}
-            <a href="#">削除</a>
+            <a href="" onClick={() => removeLabel(label.id)}>削除</a>
           </li>
         ))}
       </ul>
