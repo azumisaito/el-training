@@ -14,7 +14,7 @@ export const Labels = (props) => {
   return (
     <div>
       <h1>ラベル一覧</h1>
-      <LabelCreateForm />
+      <LabelCreateForm labels={labels} setLabels={setLabels} />
       <h3>ラベル</h3>
       <ul>
         {labels.map(label => (

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :tasks, only: %i[index show]
-    resources :labels, only: %i[index]
+    resources :labels, only: %i[index create]
   end
 
   get '*path', to: 'application#routing_error'
