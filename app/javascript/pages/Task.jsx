@@ -1,14 +1,17 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { useLocation } from 'react-router-dom'
 
 export const Task = () => {
   const [task, setTask] = useState(''),
-        taskId = 1
+        location = useLocation(),
+        taskId = location.state.id;
+
 
   React.useEffect(async () =>{
-    const response = await axios.get('/api/tasks/' + taskId);
+    const response = await axios.get("/api/tasks/" + taskId);
     setTask(response.data)
-  })
+  }, [])
 
   return (
     <div>
