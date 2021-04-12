@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+
   namespace :admin do
     resources :users do
       resources :tasks, only: :index
     end
   end
+
   resources :tasks do
     resources :task_labels, only: %i[create destroy]
   end
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
+    resources :tasks, only: %i[index show]
     resources :labels, only: %i[index create]
   end
 
