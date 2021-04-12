@@ -11,6 +11,9 @@ export const Routes = () => {
     <div>
       <Navigation />
       <Switch>
+        <Route exact path="/">
+          <Tasks />
+        </Route>
         <Route path="/spa/labels">
           <Labels />
         </Route>
