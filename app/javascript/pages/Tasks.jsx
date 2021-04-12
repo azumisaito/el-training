@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { LabelCreateForm } from '~/components/LabelCreateForm'
 import { Labels } from './Labels'
@@ -29,7 +30,7 @@ export const Tasks = () => {
           {tasks.map(task => (
             <tr key={task.id}>
               <td>
-                <a href="#">{task.name}</a>
+                <Link to={'/spa/tasks/' + task.id}>{task.name}</Link>
               </td>
               <td>
                 {task.end_date}
