@@ -15,6 +15,8 @@ class Api::LabelsController < ApplicationController
     end
   end
 
+  def destroy; end
+
   private
 
   def label_params
