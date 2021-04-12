@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { Labels } from '~/pages/Labels'
 import { Hoge } from '~/pages/Hoge'
-import { TasksIndex } from '~/pages/TasksIndex'
+import { Tasks } from '~/pages/Tasks'
 
 export const Routes = () => {
   return (
@@ -14,7 +14,7 @@ export const Routes = () => {
         <Hoge />
       </Route>
       <Route path="/spa/tasks">
-        <TasksIndex />
+        <Tasks />
       </Route>
     </Switch >
   )
