@@ -32,7 +32,7 @@ RSpec.describe 'Sessions', type: :system do
     end
   end
 
-  context 'ログイン時' do
+  context 'ログイン時', js: true do
     it 'ログアウトリンクが表示される' do
       do_login
       expect(page).to have_content 'ログアウト'
