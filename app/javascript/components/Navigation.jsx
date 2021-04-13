@@ -9,7 +9,7 @@ export const Navigation = () => {
           <Link to={'/spa/tasks'}>タスク一覧</Link>
         </li>
         <li>
-          <a href='/tasks/new'>タスク作成</a>
+        <Link to={'/spa/tasks/new'}>タスク作成</Link>
         </li>
         <li>
           <Link to={'/spa/labels'}>ラベル一覧</Link>

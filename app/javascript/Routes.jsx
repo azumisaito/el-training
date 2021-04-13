@@ -5,6 +5,7 @@ import { Hoge } from '~/pages/Hoge'
 import { Navigation } from '~/components/Navigation'
 import { Task } from '~/pages/Task'
 import { Tasks } from '~/pages/Tasks'
+import { TasksNew } from '~/pages/TasksNew'
 
 export const Routes = () => {
   return (
@@ -19,6 +20,9 @@ export const Routes = () => {
         </Route>
         <Route path="/spa/hoge">
           <Hoge />
+        </Route>
+        <Route path="/spa/tasks/new">
+          <TasksNew />
         </Route>
         <Route path="/spa/tasks/:id">
           <Task />
