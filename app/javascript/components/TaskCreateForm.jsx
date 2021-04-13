@@ -1,10 +1,25 @@
 import React from 'react'
+import axios from 'axios'
 
 export const TaskCreateForm = () => {
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post("/api/tasks", {
+      task: {
+        name: "test",
+        description: "テストの説明",
+        end_date: "",
+        status: 0,
+        priority: 0,
+        user_id: 1
+      }
+    })
+  }
+
   return(
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <p>タスク名</p>
           <input type="text" />
