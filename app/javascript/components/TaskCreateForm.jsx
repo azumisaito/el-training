@@ -3,6 +3,9 @@ import axios from 'axios'
 
 export const TaskCreateForm = () => {
 
+  const token = document.querySelector('[name=csrf-token]').content
+  axios.defaults.headers.common['X-CSRF-TOKEN'] = token
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("/api/tasks", {
